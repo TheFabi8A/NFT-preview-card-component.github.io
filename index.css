@@ -16,6 +16,11 @@ body {
     font-size: 18px;
 }
 
+picture {
+    width: 35px;
+    height: 35px;
+}
+
 :root {
     --soft-blue: hsl(215deg 51% 70%);
     --cyan: hsl(178deg 100% 50%);
@@ -32,10 +37,10 @@ body {
     align-items: center;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 15px 35px 10px rgb(8 17 31);
 }
 
 .img-container {
-    display: block;
     position: relative;
     width: 300px;
     height: 300px;
@@ -110,11 +115,6 @@ body {
     flex-flow: row nowrap;
     align-items: center;
     gap: 7.5px;
-}
-
-picture {
-    width: 35px;
-    height: 35px;
 }
 
 .creator-container {
