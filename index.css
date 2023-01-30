@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+@font-face {
+    font-family: outfit-light;
+    src:
+        url("fonts/Outfit-Light.woff2") format("woff2")
+        url("fonts/Outfit-Light.woff") format("woff")
+        url("fonts/Outfit-Light.ttf") format("truetype");
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: Outfit-regular;
+    src:
+        url("fonts/Outfit-Regular.woff2") format("woff2")
+        url("fonts/Outfit-Regular.woff") format("woff")
+        url("fonts/Outfit-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+/* @font-face {
+    font-family: outfit-semibold;
+    src:
+        url("fonts/Outfit-SemiBold.woff2") format("woff2")
+        url("fonts/Outfit-SemiBold.woff") format("woff")
+        url("fonts/Outfit-SemiBold.ttf") format("truetype");
+    font-display: swap;
+} */
+
+body {
+    font-family: var(--font-400);
+    background-color: var(--main-bg);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+:root {
+    --soft-blue: hsl(215deg 51% 70%);
+    --cyan: hsl(178deg 100% 50%);
+    --main-bg: hsl(217deg 54% 11%);
+    --card-bg: hsl(216deg 50% 16%);
+    --line: hsl(215% 32% 27%);
+    --white: hsl(0deg 0% 100%);
+    --font-400: outfit-regular, sans-serif;
+}
+
+.card {
+    background-color: var(--card-bg);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.img-container {
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.background-pointer {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: var(--cyan);
+    opacity: 0;
+    z-index: 5;
+}
+
+.view-svg {
+    position: absolute;
+    left: calc(300px / 2 - 24px);
+    top: calc(300px / 2 - 24px);
+    opacity: 0;
+    z-index: 10;
+}
+
+.img-nft {
+    width: 300px;
+    height: 300px;
+}
+
+.contain {
+    width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.name-nft {
+    color: var(--white);
+    font-size: 20px;
+    font-family: var(--font-600);
+    letter-spacing: 1px;
+    width: max-content;
+}
+
+.description {
+    color: var(--soft-blue);
+    font-size: 18px;
+}
+
+.details {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--soft-blue);
+    padding-bottom: 20px;
+}
+
+.price {
+    color: var(--cyan);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+    letter-spacing: 1px;
+}
+
+.time-left {
+    color: var(--soft-blue);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 7.5px;
+    letter-spacing: 1px;
+}
+
+.line {
+    outline: 1px solid var(--soft-blue);
+}
+
+.creator-container {
+    color: var(--soft-blue);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-avatar {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border: 1px solid var(--white);
+    border-radius: 25px;
+}
+
+.name-creator {
+    color: var(--white);
+}
+
+.name-nft:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.name-creator:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.img-container:hover .background-pointer {
+    opacity: 0.5;
+}
+
+.img-container:hover .view-svg {
+    opacity: 1;
+}
+
+.img-container:hover .img-nft {
+    filter: blur(2.5px);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        min-height: 100vh;
+    }
+}
